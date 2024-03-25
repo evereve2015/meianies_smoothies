@@ -3,7 +3,7 @@ import streamlit as st
 from snowflake.snowpark.functions import col
 import requests
 
-fruityvice_response = requests.get('https//fruityvice.com/api/fruit/watermelon')
+fruityvice_response = requests.get('https://fruityvice.com/api/fruit/watermelon')
 fv_df = st.dataframe(data=st.text(fruityvice_response.json(), use_container_width=True)
 
 # Write directly to the app
