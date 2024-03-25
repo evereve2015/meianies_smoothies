@@ -11,15 +11,14 @@ st.write(
     """
 )
 
-cnx = st.connection('snowflake')
-session = cnx.session()
 # option = st.selectbox(
 #     'What is your favorite fruit?',
 #     ('Strawberries', 'Banana', 'Peaches')
 # )
 # st.write('Your favorite fruit is:', option)
 
-session = get_active_session()
+cnx = st.connection('snowflake')
+session = cnx.session()
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('fruit_name'))
 # st.dataframe(data=my_dataframe, use_container_width=True)
 
