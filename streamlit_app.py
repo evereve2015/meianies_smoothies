@@ -4,7 +4,8 @@ from snowflake.snowpark.functions import col
 import requests
 
 fruityvice_response = requests.get('https//fruityvice.com/api/fruit/watermelon')
-st.text(fruityvice_response)
+fv_df = st.dataframe(data=st.text(fruityvice_response.json(), use_container_width=True)
+
 # Write directly to the app
 st.title("Customize Your Smoothie! :cup_with_straw:")
 st.write(
